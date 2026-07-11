@@ -23,6 +23,8 @@ import EditNewArrival from "../views/products/EditNewArrival.vue";
 import EditOnSale from '@/views/products/EditOnSale.vue'
 import EditBestSeller from "@/views/products/EditBestSeller.vue";
 
+import TestUpload from '../views/TestUpload.vue'
+
 const routes = [
   { path: "/", redirect: "/homepage" },
   { path: "/homepage", name: "HomePage", component: HomePage },
@@ -47,6 +49,10 @@ const routes = [
   { path: "/products/edit/:id", name: "EditNewArrival", component: EditNewArrival, meta: { layout: "auth", requiresAuth: true } },
   { path: '/products/edit_on_sale/:id',name: 'EditOnSale',component: EditOnSale,meta: { layout: 'auth', requiresAuth: true }},
   { path: "/products/edit_best_seller/:id", name: "EditBestSeller", component: EditBestSeller, meta: { layout: "auth", requiresAuth: true } },
+  {
+    path:'/test-upload',
+    component:TestUpload
+}
 ];
 
 const router = createRouter({

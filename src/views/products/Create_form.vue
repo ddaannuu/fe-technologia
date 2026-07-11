@@ -57,6 +57,9 @@
 </template>
 
 <script>
+
+import { supabase } from "@/lib/supabase";
+
 const API = import.meta.env.VITE_API_URL;
 
 export default {
@@ -104,9 +107,53 @@ export default {
     handleFileChange(event, name) {
       this.files[name] = event.target.files[0];
     },
+    async uploadImage(file) {
+
+      if (!file) return "";
+
+      const ext = file.name.split(".").pop();
+
+      const fileName =
+        `${Date.now()}-${Math.random().toString(36).substring(2)}.${ext}`;
+
+      const { error } = await supabase.storage
+        .from("products")
+        .upload(fileName, file);
+
+      if (error) {
+        throw error;
+      }
+
+      const { data } = supabase.storage
+        .from("products")
+        .getPublicUrl(fileName);
+
+      return data.publicUrl;
+    },
     async submitForm() {
+
       this.errors = [];
       this.success = false;
+
+      const image1 = await this.uploadImage(this.files.image_1_file);
+
+      const image2 = this.files.image_2_file
+          ? await this.uploadImage(this.files.image_2_file)
+          : "";
+
+      const image3 = this.files.image_3_file
+          ? await this.uploadImage(this.files.image_3_file)
+          : "";
+
+      const qr = this.files.qr_code_file
+          ? await this.uploadImage(this.files.qr_code_file)
+          : "";
+
+      console.log(image1);
+      console.log(image2);
+      console.log(image3);
+      console.log(qr);
+      
 
       const formData = new FormData();
 
@@ -120,11 +167,6 @@ export default {
       }
 
       // Tambahkan file
-      for (const key in this.files) {
-        if (this.files[key]) {
-          formData.append(key, this.files[key]);
-        }
-      }
 
       try {
         const res = await fetch(`${API}/products/create_form`, {
