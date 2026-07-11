@@ -173,9 +173,16 @@ export default {
 
       try {
         const res = await fetch(`${API}/products/create_form`, {
-          method: "POST",
-          body: formData,
-        });
+        method: "POST",
+        body: formData,
+      });
+
+      console.log("Status:", res.status);
+
+      const text = await res.text();
+
+      console.log(text);
+        console.log(res.status);
 
         const data = await res.json();
 
@@ -185,8 +192,13 @@ export default {
         } else {
           this.errors = data.errors || ["Gagal menambahkan produk."];
         }
-      } catch (err) {
-        this.errors = ["Terjadi kesalahan saat mengirim data."];
+      } 
+      catch(err){
+
+          console.error(err);
+
+          this.errors=[err.message];
+
       }
     },
     resetForm() {
