@@ -58,7 +58,7 @@
 
 <script>
 
-
+import { supabase } from "@/lib/supabase";
 const API = import.meta.env.VITE_API_URL;
 
 export default {
@@ -103,12 +103,51 @@ export default {
     };
   },
   methods: {
+
+    async uploadImage(file) {
+
+      if (!file) return "";
+
+      const fileName = Date.now() + "-" + file.name;
+
+      const { error } = await supabase.storage
+        .from("products")
+        .upload(fileName, file);
+
+      if (error) {
+        throw error;
+      }
+
+      const { data } = supabase.storage
+        .from("products")
+        .getPublicUrl(fileName);
+
+      return data.publicUrl;
+    },
+
     handleFileChange(event, name) {
       this.files[name] = event.target.files[0];
     },
+
     async submitForm() {
       this.errors = [];
       this.success = false;
+
+      const image1 = await this.uploadImage(this.files.image_1_file);
+
+      console.log(image1);
+
+      const image2 = this.files.image_2_file
+          ? await this.uploadImage(this.files.image_2_file)
+          : "";
+
+      const image3 = this.files.image_3_file
+          ? await this.uploadImage(this.files.image_3_file)
+          : "";
+
+      const qr = this.files.qr_code_file
+          ? await this.uploadImage(this.files.qr_code_file)
+          : "";
 
       const formData = new FormData();
 
