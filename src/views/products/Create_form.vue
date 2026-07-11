@@ -148,6 +148,13 @@ export default {
           ? await this.uploadImage(this.files.qr_code_file)
           : "";
 
+      console.log({
+          image1,
+          image2,
+          image3,
+          qr
+      });
+
       const formData = new FormData();
 
       // Tambahkan data teks
