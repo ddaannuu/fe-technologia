@@ -45,17 +45,9 @@ export default {
       successMessage: '',
       loading: false
     };
-  }
+  },
   mounted() {
     document.body.classList.add("login");
-
-    if (!window.grecaptcha) {
-      const script = document.createElement('script');
-      script.src = 'https://www.google.com/recaptcha/api.js';
-      script.async = true;
-      script.defer = true;
-      document.head.appendChild(script);
-    }
   },
   beforeUnmount() {
     document.body.classList.remove("login");
@@ -65,14 +57,7 @@ export default {
       this.errors = [];
       this.successMessage = '';
       this.loading = true;
-
-      const captchaResponse = grecaptcha.getResponse();
-
-      if (!captchaResponse) {
-        this.errors.push('Silakan centang reCAPTCHA terlebih dahulu.');
-        this.loading = false;
-        return;
-      }
+      
 
       try {
       const API = import.meta.env.VITE_API_URL;
@@ -83,8 +68,7 @@ export default {
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
             username: this.username,
-            password: this.password,
-            'g-recaptcha-response': captchaResponse
+            password: this.password 
           })
         });
 
