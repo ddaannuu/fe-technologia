@@ -3,7 +3,7 @@
     <div class="profile-banner">
       <img src="../assets/Images/debi.png" alt="Debi Saputra" class="profile-photo" />
       <div class="profile-name-section">
-        <h1>Farhan Ardiansyah</h1>
+        <h1>Debi Saputra</h1>
         <p class="nim">NIM: 23.11.5480</p>
         <p class="role">UI Designer & Front End Developer</p>
       </div>
