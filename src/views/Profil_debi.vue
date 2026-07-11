@@ -46,7 +46,7 @@
             <div class="icon-circle">
               <img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="Instagram" />
             </div>
-            <span>@frhnardns_</span>
+            <span>@debisaputra</span>
           </a>
           <a href="https://www.tiktok.com/@username" target="_blank" class="social-item">
             <div class="icon-circle">
@@ -54,11 +54,11 @@
             </div>
             <span>@username</span>
           </a>
-          <a href="https://github.com/faanns1" target="_blank" class="social-item">
+          <a href="https://github.com/DebiSaputra24" target="_blank" class="social-item">
             <div class="icon-circle">
               <img src="https://cdn-icons-png.flaticon.com/512/733/733553.png" alt="GitHub" />
             </div>
-            <span>faanns1</span>
+            <span>DebiSaputra24</span>
           </a>
         </div>
       </div>
