@@ -232,6 +232,14 @@
           <div class="profile-container">
 
             <div class="profile-card">
+              <a href="profil_debi" style="text-decoration: none; color: inherit">
+                <img src="../assets/Images/debi.png" alt="Debi" class="profile-img" />
+                <div class="profile-name">Debi Saputra 23.11.5480</div>
+                <div class="profile-desc">UI/UX - Front End Developper - Back End Developer - Database Administrator - Network Engineer</div>
+              </a>
+            </div>
+
+            <div class="profile-card">
               <a href="profil_danu" style="text-decoration: none; color: inherit">
                 <img src="../assets/Images/Danu.jpg" alt="Danu" class="profile-img" />
                 <div class="profile-name">Rifky Danu Asmoro 23.11.5489</div>
