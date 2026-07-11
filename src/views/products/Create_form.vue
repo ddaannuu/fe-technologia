@@ -166,12 +166,10 @@ export default {
         formData.append(key, value);
       }
 
-      // Tambahkan file
-      for (const key in this.files) {
-        if (this.files[key]) {
-          formData.append(key, this.files[key]);
-        }
-      }
+      formData.append("image_1", image1);
+      formData.append("image_2", image2);
+      formData.append("image_3", image3);
+      formData.append("qr_code", qr);
 
       try {
         const res = await fetch(`${API}/products/create_form`, {
