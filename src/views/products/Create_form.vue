@@ -135,7 +135,6 @@ export default {
 
       const image1 = await this.uploadImage(this.files.image_1_file);
 
-      console.log(image1);
 
       const image2 = this.files.image_2_file
           ? await this.uploadImage(this.files.image_2_file)
