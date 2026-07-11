@@ -28,6 +28,10 @@
        
         <ul class="github-list">
           <li>
+            <strong>Debi Saputra</strong><br />
+            <a href="https://github.com/DebiSaputra24" target="_blank">Debi Saputra</a>
+          </li>
+          <li>
             <strong>Rifky Danu Asmoro</strong><br />
             <a href="https://github.com/ddaannuu" target="_blank">ddaannuu</a>
           </li>
