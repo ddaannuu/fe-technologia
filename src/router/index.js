@@ -8,6 +8,7 @@ import Workstastion from "../views/Workstastion.vue";
 import ProductDetail from "@/views/ProductDetail.vue";
 import Students from "@/views/Students.vue";
 import VideoEditing from "@/views/VideoEditing.vue";
+import Profil_debi from "../views/Profil_debi.vue";
 import Profil_danu from "../views/Profil_danu.vue";
 import Profil_baskara from "../views/Profil_baskara.vue";
 import Profil_vianda from "../views/Profil_vianda.vue";
@@ -34,6 +35,7 @@ const routes = [
   { path: "/product/:id", name: "ProductDetail", component: ProductDetail },
   { path: "/students", name: "Students", component: Students },
   { path: "/videoediting", name: "VideoEditing", component: VideoEditing },
+  { path: "/profil_debi", name: "Profil_debi", component: Profil_debi },
   { path: "/profil_danu", name: "Profil_danu", component: Profil_danu },
   { path: "/profil_baskara", name: "Profil_baskara", component: Profil_baskara },
   { path: "/profil_vianda", name: "Profil_vianda", component: Profil_vianda },
