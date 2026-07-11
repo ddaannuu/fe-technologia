@@ -85,7 +85,6 @@ export default {
         this.errors.push('Gagal terhubung ke server.');
       } finally {
         this.loading = false;
-        grecaptcha.reset();
       }
     }
   }
@@ -162,9 +161,5 @@ export default {
 }
 .container-login button:hover {
   background: #584fe0;
-}
-.captcha-box {
-  margin-bottom: 1rem;
-  text-align: center;
 }
 </style>
