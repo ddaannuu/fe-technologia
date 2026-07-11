@@ -171,20 +171,16 @@ export default {
       formData.append("image_3", image3);
       formData.append("qr_code", qr);
 
-      try {
-        const res = await fetch(`${API}/products/create_form`, {
-        method: "POST",
-        body: formData,
+      const res = await fetch(`${API}/products/create_form`, {
+          method: "POST",
+          body: formData,
       });
 
       console.log("Status:", res.status);
 
-      const text = await res.text();
+      const data = await res.json();
 
-      console.log(text);
-        console.log(res.status);
-
-        const data = await res.json();
+      console.log("Response:", data);
 
         if (data.success) {
           this.success = true;

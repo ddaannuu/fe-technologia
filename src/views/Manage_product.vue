@@ -6,7 +6,7 @@
         <span>
           Halo, {{ user.nama_lengkap }} ({{ user.role }}) |
         </span>
-        <a href="http://localhost:5173/">Halaman Utama</a>
+        <a href="https://fe-technologia-opal.vercel.app/">Halaman Utama</a>
       </div>
     </div>
 
