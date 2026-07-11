@@ -24,16 +24,6 @@
           <input type="password" v-model="password" required />
         </div>
 
-        <div class="captcha-box">
-      
-          <div
-            class="g-recaptcha"
-            :data-sitekey="recaptchaSiteKey"
-            data-theme="light"
-            data-size="normal"
-          ></div>
-        </div>
-
         <div>
           <button type="submit" :disabled="loading">
             {{ loading ? 'Memproses...' : 'Login' }}
@@ -53,10 +43,9 @@ export default {
       password: '',
       errors: [],
       successMessage: '',
-      loading: false,
-      recaptchaSiteKey: '6LesKngrAAAAAFLlsxjPQTDo1VFpRcVmH38lsE6g'
+      loading: false
     };
-  },
+  }
   mounted() {
     document.body.classList.add("login");
 
